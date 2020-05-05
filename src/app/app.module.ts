@@ -13,6 +13,8 @@ import {environment} from "../environments/environment";
 import {EffectsModule} from "@ngrx/effects";
 import {EffectsArray} from "./store/effects";
 
+import {APP_BASE_HREF} from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -30,7 +32,7 @@ import {EffectsArray} from "./store/effects";
       logOnly: environment.production, // Restrict extension to log-only mode
     }),
   ],
-  providers: [],
+  providers: [{provide: APP_BASE_HREF, useValue: '/'}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
